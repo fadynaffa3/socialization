@@ -18,5 +18,7 @@
 
 .byebug_history
 
+/coverage/*
+
 **.swp
 **.swo

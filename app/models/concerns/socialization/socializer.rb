@@ -9,9 +9,14 @@ module Socialization
 
     included do
       include Socialization::Mention
+      include Socialization::Tag
 
       def self.acts_as_mentionable(_opts = {})
         include Socialization::Mentionable
+      end
+
+      def self.acts_as_taggable(_opts = {})
+        include Socialization::Taggable
       end
     end
   end
