@@ -1,9 +1,9 @@
 module Socialization::Tag
   extend ActiveSupport::Concern
 
-  def tag!(tagger, tagged)
+  def tag!(tagged)
     if tagged.try(:taggable?)
-      tagged.create_tag!(tagger)
+      tagged.create_tag!(self)
     else
       false
     end

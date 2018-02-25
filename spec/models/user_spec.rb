@@ -11,7 +11,7 @@ RSpec.describe User, type: :model do
 
   describe 'mentionable' do
     it 'will create mention when user1 mentions user2 on a post' do
-      post.mention!(user1, user2)
+      expect { post.mention!(user1, user2) }.to change { user2.mentions.count }.by(1)
     end
   end
 end
